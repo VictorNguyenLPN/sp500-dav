@@ -22,7 +22,7 @@ load_dotenv()
 ALPHA_VANTAGE_API_KEY = os.getenv("ALPHA_VANTAGE_API_KEY_2")
 
 raw_data = yf.download(
-    tickers = "^SP500-40",
+    tickers = "GSPC",
     start = "1900-01-01",
     end = "2025-01-01",
     interval = "1D",
@@ -149,4 +149,4 @@ for p in [7, 14, 28, 56]:
 first_valid_index = aug_data.dropna().index.min()
 cropped_data = aug_data.loc[first_valid_index:].reset_index(drop=True)
 
-cropped_data.to_csv("data/v5.csv")
+cropped_data.to_csv("data/v6.csv")
